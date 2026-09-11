@@ -1,0 +1,30 @@
+name: Sync Infinity Sketcher assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-infinity-assets.yml'
+      - 'assets/infinity-sketcher/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download project assets
+        run: |
+          mkdir -p assets/infinity-sketcher
+          curl -L --fail --retry 3 -o assets/infinity-sketcher/vehicle.png https://raw.githubusercontent.com/Rutu2701/Infinity-Sketcher/main/docs/images/vehicle.png
+          curl -L --fail --retry 3 -o assets/infinity-sketcher/gui.svg https://raw.githubusercontent.com/Rutu2701/Infinity-Sketcher/main/docs/images/gui.svg
+      - name: Commit local assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/infinity-sketcher/vehicle.png assets/infinity-sketcher/gui.svg
+          git diff --cached --quiet || git commit -m 'Sync Infinity Sketcher images locally'
+          git push
