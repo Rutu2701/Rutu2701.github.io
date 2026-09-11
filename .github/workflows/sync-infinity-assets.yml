@@ -23,6 +23,7 @@ jobs:
           repository: Rutu2701/Infinity-Sketcher
           path: infinity-source
           ref: main
+          token: ''
           persist-credentials: false
       - name: Copy project assets
         run: |
