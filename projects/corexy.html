@@ -5,7 +5,7 @@
 <title>CoreXY 3D Printer — Rutuparna Purandare</title>
 <link rel="stylesheet" href="../styles.css">
 <style>
-.project-hero{padding:90px 0 60px}.project-hero .lede{max-width:780px}.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:45px}.project-grid>div{background:var(--panel);padding:28px;border:1px solid var(--line);border-radius:7px}.project-grid h3{margin:0 0 10px;font-size:20px}.project-grid p{color:#bbb9b1;margin:0}.architecture{margin-top:65px}.architecture-section{border-top:1px solid var(--line);padding:30px 0}.architecture-section h2{font-size:32px;margin:0 0 14px}.architecture-section p,.architecture-section li{color:#bdbbb4}.architecture-section ul{padding-left:22px}.equation{display:inline-block;border:1px solid var(--line);padding:10px 14px;margin:8px 0;font:13px 'DM Mono',monospace;color:var(--text);background:#0d0d0d}.stack{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.stack span{border:1px solid var(--line);padding:6px 9px;font:10px 'DM Mono',monospace;color:var(--muted)}@media(max-width:800px){.project-grid{grid-template-columns:1fr}.project-hero{padding-top:55px}}
+.project-hero{padding:80px 0 55px}.project-hero .lede{max-width:820px}.project-kicker{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.project-kicker span,.skill{border:1px solid var(--line);padding:7px 10px;font:10px 'DM Mono',monospace;color:var(--muted);letter-spacing:.04em}.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}.project-grid>div{background:var(--panel);padding:24px;border:1px solid var(--line);border-radius:7px}.project-grid h3{margin:0 0 9px;font-size:18px}.project-grid p,.architecture-section p,.architecture-section li{color:#bdbbb4}.architecture{margin-top:60px}.architecture-section{border-top:1px solid var(--line);padding:30px 0}.architecture-section h2{font-size:30px;margin:0 0 12px}.architecture-section h3{font-size:16px;margin:26px 0 12px}.equation{display:inline-block;border:1px solid var(--line);padding:10px 14px;margin:5px 0;font:13px 'DM Mono',monospace;color:var(--text);background:#0d0d0d}.stack,.skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.skill{color:var(--text)}.proof{margin-top:55px}.asset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.asset{border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:7px}.asset img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}.asset-body{padding:13px 15px}.asset-body strong{display:block;font-size:14px;overflow-wrap:anywhere}.asset-body small{display:block;margin-top:5px;color:var(--muted);font:10px 'DM Mono',monospace}.asset-body a{display:inline-block;margin-top:10px;color:var(--text);font-size:12px}.artifact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.artifact{border:1px solid var(--line);padding:18px;background:var(--panel)}.artifact strong{display:block;font-size:14px}.artifact span{display:block;margin-top:8px;color:var(--muted);font:10px 'DM Mono',monospace}.artifact a{display:inline-block;margin-top:14px;color:var(--text);font-size:12px}.artifact.empty{display:none}.section-note{color:var(--muted);font-size:13px;max-width:780px}.impact{font-size:19px;line-height:1.6;max-width:820px}.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:35px}.callout{border-left:2px solid var(--text);padding-left:18px}.callout p{margin:0}.hidden{display:none!important}@media(max-width:900px){.asset-grid{grid-template-columns:1fr 1fr}.artifact-grid{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}}@media(max-width:650px){.project-grid,.asset-grid,.artifact-grid{grid-template-columns:1fr}.project-hero{padding-top:55px}}
 </style>
 </head>
 <body>
@@ -13,24 +13,59 @@
 <main class="section">
 <a class="back" href="../index.html#work">← Back to projects</a>
 <section class="project-hero">
-<p class="eyebrow">PROJECT 03 · 3D PRINTING · COREXY · KLIPPER</p>
+<p class="eyebrow">PROJECT 03 · MECHANICAL · EMBEDDED · 3D PRINTING</p>
 <h1>CoreXY 3D Printer</h1>
-<p class="lede">A scratch-built FDM printer designed around a CoreXY motion system, low-cost materials and a modular electronics architecture. The control stack uses a Raspberry Pi 4B as the Klipper host and an Arduino Uno as the motion MCU.</p>
+<p class="lede">Scratch-built FDM printer engineered around a <strong>CoreXY motion system</strong>, a modular electronics stack and <strong>Klipper</strong>. The build combines mechanical design, motion control, embedded electronics, Linux configuration and iterative fault diagnosis.</p>
+<div class="project-kicker"><span>COREXY KINEMATICS</span><span>KLIPPER</span><span>STEPPER CONTROL</span><span>MECHANICAL FABRICATION</span><span>CALIBRATION</span></div>
 <div class="project-grid">
-<div><h3>Motion system</h3><p>CoreXY gantry with two stationary NEMA 17 motors, GT2 belts and salvaged 8 mm steel rods with LM8UU bearings.</p></div>
-<div><h3>Frame</h3><p>Approximately 400 × 400 × 550 mm PVC structure with plywood/MDF structural plates and mechanical brackets.</p></div>
-<div><h3>Z axis</h3><p>Belt-driven vertical Z mechanism using a continuous GT2 loop and pulley reduction instead of lead screws.</p></div>
-<div><h3>Toolhead</h3><p>MK8 direct-drive extruder with a 24 V ceramic heater and radial part-cooling fan.</p></div>
+<div><h3>Motion architecture</h3><p>Two stationary <strong>NEMA 17</strong> motors drive the XY gantry through <strong>GT2 belts</strong>. Salvaged 8 mm steel rods and LM8UU bearings form the linear motion system.</p></div>
+<div><h3>Structure</h3><p>Approximately <strong>400 × 400 × 550 mm</strong> PVC frame with plywood/MDF structural plates and mechanical brackets.</p></div>
+<div><h3>Z axis</h3><p><strong>Belt-driven Z</strong> using a continuous GT2 loop and pulley reduction instead of lead screws.</p></div>
+<div><h3>Toolhead</h3><p><strong>MK8 direct-drive extruder</strong>, 24 V ceramic heater and radial part-cooling fan.</p></div>
 </div>
 </section>
 <section class="architecture">
-<div class="architecture-section"><h2>CoreXY kinematics</h2><p>Both XY motors remain fixed to the frame. The axes are generated by differential motion of motors A and B:</p><div class="equation">ΔA = ΔX + ΔY</div><br><div class="equation">ΔB = ΔX − ΔY</div><p>A mismatch between motor movement or belt tension produces characteristic diagonal displacement, making CoreXY belt synchronization a primary calibration concern.</p></div>
-<div class="architecture-section"><h2>Control architecture</h2><p>The printer uses Klipper rather than a conventional monolithic printer firmware. The Raspberry Pi runs the host software, Moonraker and Mainsail while the Arduino Uno executes the low-level scheduled step timing.</p><div class="stack"><span>Raspberry Pi 4B</span><span>Klipper</span><span>Moonraker</span><span>Mainsail</span><span>Arduino Uno</span><span>DRV8825</span></div></div>
-<div class="architecture-section"><h2>Electronics</h2><ul><li>24 V isolated power distribution for motors and hotend.</li><li>Three DRV8825 stepper-driver modules with manually calibrated Vref.</li><li>Discrete IRLZ44N logic-level MOSFET stage for hotend switching.</li><li>Mechanical endstops and NTC thermistor input.</li></ul></div>
-<div class="architecture-section"><h2>Calibration & diagnostics</h2><p>Initial testing focused on CoreXY belt tension, mechanical binding, driver current and hotend temperature control. A recurring diagonal layer-shift defect was traced to the coupled CoreXY motion system and addressed through belt-tension balancing, idler checks and increased driver torque margin.</p></div>
-<div class="architecture-section"><h2>Current status</h2><p>Mechanical and electronics architecture documented. The project is being developed incrementally, with further printer tuning and hardware changes to be documented as the build progresses.</p></div>
+<div class="architecture-section">
+<h2>What this project demonstrates</h2>
+<div class="two-col"><div><p class="impact">This is not just a printer assembly. It is an integrated engineering exercise spanning <strong>kinematics → mechanics → electronics → firmware → Linux host → calibration → diagnostics</strong>.</p></div><div class="callout"><p><strong>Recruiter signal</strong><br>Built from low-cost and salvaged components while making the motion and control architecture work as one system.</p></div></div>
+<div class="skills"><span class="skill">Mechanical Design</span><span class="skill">CoreXY Kinematics</span><span class="skill">Stepper Motor Control</span><span class="skill">Embedded Systems</span><span class="skill">Linux / Raspberry Pi</span><span class="skill">Klipper Configuration</span><span class="skill">Electronics Integration</span><span class="skill">Hardware Debugging</span><span class="skill">Calibration</span><span class="skill">System Integration</span></div>
+</div>
+<div class="architecture-section"><h2>CoreXY kinematics</h2><p>Both XY motors remain fixed to the frame. Motion is produced by coupled motor commands:</p><div class="equation">ΔA = ΔX + ΔY</div><br><div class="equation">ΔB = ΔX − ΔY</div><p>This coupling means belt tension, idler alignment, motor synchronization and frame geometry directly affect print accuracy.</p></div>
+<div class="architecture-section"><h2>Control architecture</h2><p>The control stack separates the Linux host from low-level motion execution. A <strong>Raspberry Pi 4B</strong> hosts Klipper, Moonraker and Mainsail; an <strong>Arduino Uno</strong> acts as the motion MCU.</p><div class="stack"><span>Raspberry Pi 4B</span><span>Klipper</span><span>Moonraker</span><span>Mainsail</span><span>Arduino Uno</span><span>DRV8825</span></div></div>
+<div class="architecture-section"><h2>Electronics & power</h2><ul><li><strong>24 V isolated power distribution</strong> for the printer electronics and hotend.</li><li>Three <strong>DRV8825</strong> stepper-driver modules with manually calibrated Vref.</li><li>Discrete <strong>IRLZ44N MOSFET</strong> stage for hotend switching.</li><li>Mechanical endstops and <strong>NTC thermistor</strong> sensing.</li></ul></div>
+<div class="architecture-section"><h2>Engineering problem solving</h2><p>Calibration covered belt tension, mechanical binding, driver current and hotend temperature control. A recurring <strong>diagonal layer-shift defect</strong> was traced to the coupled CoreXY motion system. The investigation led to belt-tension balancing, idler checks and an increased driver torque margin.</p><p>This is the useful part of the build: <strong>observe → isolate the subsystem → change one variable → test again</strong>.</p></div>
+<div class="architecture-section"><h2>Skills acquired</h2><div class="project-grid" style="margin-top:20px"><div><h3>Mechanical</h3><p>CoreXY geometry, belt routing, pulley reduction, linear bearings, frame construction, alignment and mechanical fault isolation.</p></div><div><h3>Electronics</h3><p>Stepper-driver configuration, Vref calibration, 24 V distribution, MOSFET switching, endstops and thermistor integration.</p></div><div><h3>Embedded / software</h3><p>Klipper architecture, MCU-host separation, Raspberry Pi Linux environment, printer configuration and motion-control parameters.</p></div><div><h3>Debugging</h3><p>Layer-shift diagnosis, subsystem isolation, calibration loops, torque-margin decisions and system-level integration.</p></div></div></div>
 </section>
+<section class="proof architecture-section"><h2>Build evidence</h2><p class="section-note">Images and engineering artifacts are loaded from <code>assets/corexy/</code>. Add a file, give it a descriptive name, and it appears here automatically.</p><div id="images" class="asset-grid"></div></section>
+<section class="architecture-section"><h2>Engineering artifacts</h2><p class="section-note">CAD, schematics, firmware configuration and documentation are grouped by file type. Each file remains a local portfolio asset.</p><div id="artifacts" class="artifact-grid"></div></section>
 </main>
 <footer><span>© 2026 Rutuparna Purandare</span></footer>
+<script>
+const ROOT='https://api.github.com/repos/Rutu2701/Rutu2701.github.io/contents/assets/corexy';
+const SITE_ROOT='../assets/corexy/';
+const imageExt=['jpg','jpeg','png','webp','gif','svg'];
+const groups={cad:['step','stp','stl','dxf','dwg','iges','igs','f3d','fcstd'],schematics:['pdf','kicad_sch','kicad_pro','sch'],config:['cfg','conf','ini','yaml','yml','txt','json','gcode'],docs:['md','pdf','doc','docx']};
+const labels={cad:'CAD',schematics:'Schematic',config:'Configuration',docs:'Documentation'};
+function ext(path){return path.split('.').pop().toLowerCase()}
+function nice(path){return path.split('/').pop().replace(/[-_]+/g,' ').replace(/\.[^.]+$/,'')}
+function local(path){return SITE_ROOT+path.split('/').map(encodeURIComponent).join('/')}
+async function walk(url='assets/corexy'){
+ const r=await fetch('https://api.github.com/repos/Rutu2701/Rutu2701.github.io/contents/'+url); if(!r.ok) throw Error('asset index unavailable');
+ const items=await r.json(); let out=[];
+ for(const x of items){ if(x.name.startsWith('.')) continue; if(x.type==='dir') out.push(...await walk(url+'/'+x.name)); else out.push({...x,path:url.replace(/^assets\/corexy\/?/,'')+'/'+x.name}); }
+ return out;
+}
+function render(items){
+ const imgs=items.filter(x=>imageExt.includes(ext(x.name)));
+ const imageBox=document.getElementById('images');
+ imageBox.innerHTML=imgs.map(x=>`<article class="asset"><img src="${local(x.path)}" alt="${nice(x.name)}" loading="lazy"><div class="asset-body"><strong>${nice(x.name)}</strong><small>${x.path}</small><a href="${local(x.path)}" target="_blank" rel="noopener">Open full size →</a></div></article>`).join('');
+ const artifacts=document.getElementById('artifacts');
+ const usable=items.filter(x=>!imageExt.includes(ext(x.name)) && ext(x.name)!=='gitkeep' && !x.name.toLowerCase().endsWith('.md') || x.name.toLowerCase().endsWith('.pdf') || x.name.toLowerCase().endsWith('.md'));
+ artifacts.innerHTML=usable.map(x=>{let e=ext(x.name),g=Object.keys(groups).find(k=>groups[k].includes(e))||'docs';return `<article class="artifact"><strong>${nice(x.name)}</strong><span>${labels[g]} · .${e}</span><a href="${local(x.path)}" target="_blank" rel="noopener">Open artifact →</a></article>`}).join('');
+ if(!imgs.length) imageBox.classList.add('hidden');
+ if(!usable.length) artifacts.classList.add('hidden');
+}
+walk().then(render).catch(()=>{document.getElementById('images').classList.add('hidden');document.getElementById('artifacts').classList.add('hidden')});
+</script>
 </body>
 </html>
