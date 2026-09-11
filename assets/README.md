@@ -1,0 +1,1 @@
+Portfolio assets live in this directory. Project images are referenced by the HTML pages and can be added here later.
