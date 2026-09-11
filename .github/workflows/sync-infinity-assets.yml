@@ -19,8 +19,9 @@ jobs:
       - name: Download project assets
         run: |
           mkdir -p assets/infinity-sketcher
-          curl -L --fail --retry 3 -o assets/infinity-sketcher/vehicle.png https://raw.githubusercontent.com/Rutu2701/Infinity-Sketcher/main/docs/images/vehicle.png
-          curl -L --fail --retry 3 -o assets/infinity-sketcher/gui.svg https://raw.githubusercontent.com/Rutu2701/Infinity-Sketcher/main/docs/images/gui.svg
+          curl -L --fail --retry 3 -H 'Accept: application/vnd.github.raw+json' -o assets/infinity-sketcher/vehicle.png https://api.github.com/repos/Rutu2701/Infinity-Sketcher/git/blobs/b3f5ce7a373a14948198d34379983863590b0cd1
+          curl -L --fail --retry 3 -H 'Accept: application/vnd.github.raw+json' -o assets/infinity-sketcher/gui.svg https://api.github.com/repos/Rutu2701/Infinity-Sketcher/git/blobs/82c1c6cd5c4634ae21128c7dc455ec3696766841
+          file assets/infinity-sketcher/vehicle.png assets/infinity-sketcher/gui.svg
       - name: Commit local assets
         run: |
           git config user.name 'github-actions[bot]'
