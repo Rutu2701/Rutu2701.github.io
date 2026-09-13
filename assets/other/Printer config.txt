@@ -1,0 +1,137 @@
+[mcu]
+serial: /dev/serial/by-id/usb-Arduino__www.arduino.cc__0043_95635333630351706202-if00
+
+[virtual_sdcard]
+path: ~/printer_data/gcodes
+
+[display_status]
+
+[pause_resume]
+
+[force_move]
+enable_force_move: True
+
+[homing_override]
+gcode:
+    SET_KINEMATIC_POSITION X=0 Y=0 Z=0
+
+[printer]
+kinematics: corexy
+max_velocity: 60
+max_accel: 500
+max_z_velocity: 10
+max_z_accel: 100
+square_corner_velocity: 3.0
+
+[stepper_x]
+step_pin: PD2
+dir_pin: !PD5
+enable_pin: !PB0
+microsteps: 32
+rotation_distance: 40
+endstop_pin: ^PC3
+position_min: -30
+position_endstop: -30
+position_max: 150
+homing_speed: 40
+
+[stepper_y]
+step_pin: PD3
+dir_pin: !PD6
+enable_pin: !PB0
+microsteps: 32
+rotation_distance: 40
+endstop_pin: ^PB3
+position_min: -30
+position_endstop: -30
+position_max: 150
+homing_speed: 40
+
+[stepper_z]
+step_pin: PD4
+dir_pin: PD7
+enable_pin: !PB0
+microsteps: 32
+rotation_distance: 40
+endstop_pin: ^PB4
+position_min: 0
+position_endstop: 0
+position_max: 150
+homing_speed: 10
+
+[extruder]
+step_pin: PC1
+dir_pin: !PC2
+enable_pin: !PB0
+microsteps: 32
+rotation_distance: 33.500
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+min_extrude_temp: 150
+max_power: 1.0
+heater_pin: PB1
+sensor_type: Generic 3950
+sensor_pin: PC0
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 260
+
+[verify_heater extruder]
+max_error: 120
+check_gain_time: 70
+hysteresis: 12
+heating_gain: 2
+
+[fan]
+pin: PB2
+max_power: 0.7
+shutdown_speed: 0.0
+cycle_time: 0.010
+hardware_pwm: False
+kick_start_time: 0.100
+off_below: 0.15
+
+[gcode_macro PAUSE]
+rename_existing: BASE_PAUSE
+gcode:
+    BASE_PAUSE
+
+[gcode_macro RESUME]
+rename_existing: BASE_RESUME
+gcode:
+    BASE_RESUME
+
+[gcode_macro CANCEL_PRINT]
+rename_existing: BASE_CANCEL_PRINT
+gcode:
+    TURN_OFF_HEATERS
+    CLEAR_PAUSE
+    SDCARD_RESET_FILE
+    BASE_CANCEL_PRINT
+
+[gcode_macro PRINT_END]
+gcode:
+    M104 S0
+    M140 S0
+    M106 S0
+    G91
+    G1 E-1 F1800
+    {% set max_z = printer.toolhead.axis_maximum.z|float %}
+    {% set act_z = printer.toolhead.position.z|float %}
+    {% set drop_z = 50.0 %}
+    {% if act_z + drop_z > max_z %}
+        {% set target_z = max_z %}
+    {% else %}
+        {% set target_z = act_z + drop_z %}
+    {% endif %}
+    G1 Z{target_z} F600
+    M84
+
+#*# <---------------------- SAVE_CONFIG ---------------------->
+#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
+#*#
+#*# [extruder]
+#*# control = pid
+#*# pid_kp = 28.523
+#*# pid_ki = 1.902
+#*# pid_kd = 106.962
