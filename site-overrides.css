@@ -1,0 +1,6 @@
+/* Portfolio background: fixed grid + restrained green light fields */
+html,body{min-height:100%;background:#101214}
+body{position:relative;background:#101214;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(rgba(120,130,125,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(120,130,125,.055) 1px,transparent 1px);background-size:42px 42px;background-position:center center}
+body::after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(circle at 18% 20%,rgba(60,130,82,.16),transparent 24%),radial-gradient(circle at 82% 42%,rgba(55,115,75,.12),transparent 25%),radial-gradient(circle at 42% 88%,rgba(45,105,67,.10),transparent 23%);filter:blur(18px)}
+.topbar{background:rgba(16,18,20,.92)!important}
